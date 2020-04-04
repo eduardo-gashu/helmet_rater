@@ -8,7 +8,7 @@ module.exports = {
     return ( a0 + a1 * x );
   },
 
-  interpolateX: function ( x, A, B ) {
+  interpolateX: function ( y, A, B ) {
     // line equation: x = (y - a0)/a1
     const deltaY = (B.y-A.y);
     const deltaX = (B.x-A.x);
@@ -16,4 +16,5 @@ module.exports = {
     const a0 = A.y - (a1 * A.x);
     return ( (y - a0)/a1 );
   }
+
 }
