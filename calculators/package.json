@@ -4,13 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "calculate": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sharp": "node src/calculate_sharp.js",
+    "gsrater": "node src/calculate_gsrater.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fs": "0.0.1-security",
     "mathjs": "^6.6.1"
+  },
+  "devDependencies": {
+    "jest": "^25.2.3"
+  },
+  "jest": {
+    "testRegex": "(/system_tests/.*|(\\.|/)(test|spec))\\.js?$",
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ]
   }
 }
