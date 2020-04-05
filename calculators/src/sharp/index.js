@@ -1,5 +1,6 @@
 const tests = require('../tests_reader');
 const mathjs = require('mathjs');
+const Test = require('./test');
 
 
 module.exports = {
@@ -20,5 +21,6 @@ module.exports = {
     return maximunValue;
   },
 
+  Test: Test,
 };
 
