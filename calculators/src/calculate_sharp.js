@@ -1,6 +1,7 @@
 const sharp = require('./sharp');
 const testsReader = require('./tests_reader');
 const mathjs = require('mathjs')
+const { Point, XYTable } = require('./utility/index');
 
 
 /* Reading the impact tests results */
@@ -40,4 +41,20 @@ const peakEquivalentObliqueAccelerations = flatAvilPeakNormalAccelerations
                                     .map( acceleration => acceleration*mathjs.nthRoot( (1+MI), 2 ) );
 
 const allPeakAccelerations = peakNormalAccelerations.concat( peakEquivalentObliqueAccelerations );
+
+/* Fatality Risk function */
+const FATALITY_RISK_PEAK_ACCELERATIONS = [100, 150, 200, 275, 375, 500];
+const FATALITY_RISK_RISK_OF_FATALITY = [0.000, 0.000, 0.071, 0.170, 0.235, 1.000];
+const fatalityRiskFunction = new XYTable();
+for( let i in FATALITY_RISK_PEAK_ACCELERATIONS ) {
+  let x = FATALITY_RISK_PEAK_ACCELERATIONS[i];
+  let y = FATALITY_RISK_RISK_OF_FATALITY[i];
+  fatalityRiskFunction.addPoint( new Point({x: x, y: y}) );
+}
+
+/* Calculation of risk of fatal injury for each of the 45 peak acceleration */
+const fatalityRisks = allPeakAccelerations.map( peakAcceleration => {
+  return fatalityRiskFunction.aproximateY( peakAcceleration );
+});
+
 
