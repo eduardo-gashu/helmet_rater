@@ -70,7 +70,7 @@ test(`Given a XYTable with points (0, 0), (1, 1), (2, 2), (3, 3) and a x = 2.5 ,
   const x = 2.5;
   let xy = buildXYTable( [A, B, C, D] );
 
-  const { lower, upper } = xy.findXInterval(x);
+  const { lower, upper } = xy.findXIntervalLimits(x);
 
   expect(lower.x).toBe(2);
   expect(lower.y).toBe(2);

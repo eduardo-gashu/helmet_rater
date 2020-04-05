@@ -23,11 +23,11 @@ class XYTable {
   }
 
   aproximateY(x) {
-    const {lower, upper} = this.findXInterval(x);
+    const {lower, upper} = this.findXIntervalLimits(x);
     return Point.interpolateY(x, lower, upper);;
   }
 
-  findXInterval (x) {
+  findXIntervalLimits (x) {
     if( this.isEmpty() ) {
       return 'error'
     }
@@ -42,7 +42,7 @@ class XYTable {
       i++;
     } while ( upper.x < x )
 
-    return { lower:new Point( {x: lower.x, y: lower.y} ), upper: new Point( {x: upper.x, y: upper.y} ) };
+    return { lower: new Point(lower), upper: new Point(upper) };
   }
 
   isEmpty() {
