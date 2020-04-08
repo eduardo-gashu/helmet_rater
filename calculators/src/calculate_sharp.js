@@ -7,16 +7,16 @@ const { Point, XYTable } = require('./utility/index');
 /* Reading the impact tests results */
 const normalAccelerations = testsReader.getAccelerations();
 const normalForces = testsReader.getNormalForces();
-const tangentialForces = testsReader.getTangentialForces();
+const tangentForces = testsReader.getTangentForces();
 
 const peakNormalAccelerations = sharp.getAllMaximunValues( normalAccelerations );
 const peakNormalForces = sharp.getAllMaximunValues( normalForces );
-const peakTangentialForces = sharp.getAllMaximunValues( tangentialForces );
+const peakTangentForces = sharp.getAllMaximunValues( tangentForces );
 
 const NORMAL_FORCE_31 = peakNormalForces[0];
 const NORMAL_FORCE_32 = peakNormalForces[1];
-const TANGENCIAL_FORCE_31 = peakTangentialForces[0];
-const TANGENCIAL_FORCE_32 = peakTangentialForces[1];
+const TANGENCIAL_FORCE_31 = peakTangentForces[0];
+const TANGENCIAL_FORCE_32 = peakTangentForces[1];
 
 /* Computing the friction coefitient */
 const MI_31 = NORMAL_FORCE_31/TANGENCIAL_FORCE_31;

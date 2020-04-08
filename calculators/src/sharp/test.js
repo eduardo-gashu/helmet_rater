@@ -1,14 +1,17 @@
 class Test {
   constructor ( attr ) {
+    if( attr.testNumber == undefined ) {
+      return console.error('Test Error: no numberTest');
+    }
     this.testNumber = attr.testNumber;
-    this.anvil = attr.anvil;
-    this.impactVelocity = attr.impactVelocity;
-    this.impactLocation = attr.impactLocation;
+    this.anvil = attr.anvil || null;
+    this.impactVelocity = attr.impactVelocity || null;
+    this.impactLocation = attr.impactLocation || null;
 
-    this.peakAcceleration = null;
-    this.riskOfFatality = null;
-    this.impactWeightning = null;
-    this.weightedRiskOfFatality = null;
+    this.peakAcceleration = attr.peakAcceleration || null;
+    this.riskOfFatality = attr.riskOfFatality || null;
+    this.impactWeightning = attr.impactWeightning || null;
+    this.weightedRiskOfFatality = attr.weightedRiskOfFatality || null;
   }
 
   //getters
@@ -38,6 +41,18 @@ class Test {
   }
 
   //setters
+  setTestNumber( testNumber ) {
+    this.testNumber = testNumber;
+  }
+  setAnvil( anvil ) {
+    this.anvil = anvil;
+  }
+  setImpactVelocity( impactVelocity ) {
+    this.impactVelocity = impactVelocity;
+  }
+  setImpactLocation( impactLocation ) {
+    this.impactLocation = impactLocation;
+  }
   setPeakAcceleration( peakAcceleration ) {
     this.peakAcceleration = peakAcceleration;
   }

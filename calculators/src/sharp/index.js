@@ -1,26 +1,14 @@
 const tests = require('../tests_reader');
 const mathjs = require('mathjs');
+const config = require('./config');
 const Test = require('./test');
-
+const createTable = require('./create_table');
+const calculateMu = require('./calculate_mu');
 
 module.exports = {
-  getAllMaximunValues( testsData ) {
-    return testsData.map( (test) => {
-      return this.getMaximunValue( test );
-    });
-  },
-
-  getMaximunValue( testData ) {
-    let maximunValue = 0;
-    testData.forEach(value => {
-      let absValue = Math.abs(value);
-      if( absValue > maximunValue ) {
-        maximunValue = absValue;
-      }
-    });
-    return maximunValue;
-  },
-
   Test: Test,
+  createTable: createTable,
+  calculateMu: calculateMu,
+
 };
 
