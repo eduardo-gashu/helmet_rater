@@ -1,4 +1,5 @@
 const sharp = require('../src/sharp');
+const mathjs = require('mathjs')
 
 test(`Creates a sharp.Test`, function () {
   const test = new sharp.Test( {
@@ -43,4 +44,16 @@ test(`Calculates a mean friction coefficient (mu)`, function () {
   const result = sharp.calculateMu( path );
 
   expect(result).toBe(1.5)
+})
+
+test(`Gets All Peak G Results (flat, kerb adn oblieque) from a path and a mu to a Sharp Table`, function () {
+  const path = 'system_tests/impact_tests/accelerations_data';
+  const mu = 1;
+  const sharpTable = sharp.createTable();
+  const result = sharp.calculateAllPeakGs(path, mu, sharpTable);
+
+  expect(result.length).toBe(45);
+  expect( Math.abs( 9 - result[0].getPeakAcceleration() ) ).toBeCloseTo(1e-3);
+  expect( Math.abs( 9 - result[22].getPeakAcceleration() ) ).toBeCloseTo(1e-3);
+  expect( Math.abs( 9*mathjs.sqrt(2) - result[39].getPeakAcceleration() ) ).toBeCloseTo(1e-3);
 })
