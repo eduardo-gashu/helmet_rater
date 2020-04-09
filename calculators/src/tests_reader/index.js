@@ -25,8 +25,8 @@ module.exports = {
     files.sort();
     let filesContent = files.map( (file) => fs.readFileSync( (normalizedPath + file), ENCODE ) );
     return filesContent.map( fileContent => {
-      fileContent = fileContent.split( VALUE_SEPARATOR );
-      return fileContent.map( element => {
+      const splitedFileContent = fileContent.split( VALUE_SEPARATOR );
+      return splitedFileContent.map( element => {
         return Number(element);
       });
     } );

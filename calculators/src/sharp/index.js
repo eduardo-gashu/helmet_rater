@@ -4,7 +4,7 @@ const config = require('./config');
 const Test = require('./test');
 const createTable = require('./create_table');
 const calculateMu = require('./calculate_mu');
-const calculateAllPeakGs = require('./all_peak_g_calculator')
+const calculateAllPeakGs = require('./all_peak_g_calculator');
 
 
 
