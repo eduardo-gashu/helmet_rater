@@ -1,5 +1,5 @@
 const config = require('./config')
-const Test = require('./test')
+const Test = require('./test_class')
 
 module.exports = () => {
   const NUMBER_OF_TESTS = 45;
