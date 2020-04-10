@@ -1,4 +1,5 @@
 const sharp = require('../src/sharp');
+const config = require('../src/sharp/config')
 const mathjs = require('mathjs')
 
 test(`Creates a sharp.Test`, function () {
@@ -26,15 +27,15 @@ test(`Creates a sharp TestsTable`, function () {
   expect(result.length).toBe(45);
   expect(result[0].getTestNumber()).toBe(1)
   expect(result[0].getAnvil()).toBe('flat');
-  expect(result[0].getImpactVelocity()).toBeCloseTo(6);
+  expect(result[0].getImpactVelocity()).toBeCloseTo(config.VNJ);
   expect(result[0].getImpactLocation()).toBe('front');
   expect(result[22].getTestNumber()).toBe(23)
   expect(result[22].getAnvil()).toBe('kerb');
-  expect(result[22].getImpactVelocity()).toBeCloseTo(7.5);
+  expect(result[22].getImpactVelocity()).toBeCloseTo(config.VNO);
   expect(result[22].getImpactLocation()).toBe('right');
   expect(result[39].getTestNumber()).toBe(40)
   expect(result[39].getAnvil()).toBe('oblique');
-  expect(result[39].getImpactVelocity()).toBeCloseTo(12.3);
+  expect(result[39].getImpactVelocity()).toBeCloseTo(config.VOO);
   expect(result[39].getImpactLocation()).toBe('crown');
 })
 

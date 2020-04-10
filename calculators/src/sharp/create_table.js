@@ -14,13 +14,13 @@ module.exports = () => {
     if ( isOblique(i) ) tests[i-1].setAnvil('oblique');
 
     //set "linear" velocities tests 1 to 30
-    if ( isLinearJ(i) ) tests[i-1].setImpactVelocity(config.getVNJ());
-    if ( isLinearO(i) ) tests[i-1].setImpactVelocity(config.getVNO());
-    if ( isLinearM(i) ) tests[i-1].setImpactVelocity(config.getVNM());
+    if ( isLinearJ(i) ) tests[i-1].setImpactVelocity(config.VNJ);
+    if ( isLinearO(i) ) tests[i-1].setImpactVelocity(config.VNO);
+    if ( isLinearM(i) ) tests[i-1].setImpactVelocity(config.VNM);
     //set "equivalent oblique" velocities tests 31 to 45
-    if ( isObliqueJ(i) ) tests[i-1].setImpactVelocity(config.getVOJ());
-    if ( isObliqueO(i) ) tests[i-1].setImpactVelocity(config.getVOO());
-    if ( isObliqueM(i) ) tests[i-1].setImpactVelocity(config.getVOM());
+    if ( isObliqueJ(i) ) tests[i-1].setImpactVelocity(config.VOJ);
+    if ( isObliqueO(i) ) tests[i-1].setImpactVelocity(config.VOO);
+    if ( isObliqueM(i) ) tests[i-1].setImpactVelocity(config.VOM);
 
     //set impact locations
     if (isFront(i)) tests[i-1].setImpactLocation('front');

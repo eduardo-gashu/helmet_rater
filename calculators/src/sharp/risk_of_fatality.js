@@ -1,5 +1,4 @@
 const readFatalityFunction = require('../fatality_function');
-const utility = require('../utility');
 
 module.exports = function (filePath, sharpTable) {
   const fatalityFunction = readFatalityFunction(filePath);
