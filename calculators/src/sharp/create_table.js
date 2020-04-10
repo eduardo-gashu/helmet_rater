@@ -23,11 +23,11 @@ module.exports = () => {
     if ( isObliqueM(i) ) tests[i-1].setImpactVelocity(config.VOM);
 
     //set impact locations
-    if (isFront(i)) tests[i-1].setImpactLocation('front');
-    if (isLeft(i)) tests[i-1].setImpactLocation('left');
-    if (isRight(i)) tests[i-1].setImpactLocation('right');
-    if (isRear(i)) tests[i-1].setImpactLocation('rear');
-    if (isCrown(i)) tests[i-1].setImpactLocation('crown');
+    if (isFront(i)) tests[i-1].setImpactSite('front');
+    if (isLeft(i)) tests[i-1].setImpactSite('left');
+    if (isRight(i)) tests[i-1].setImpactSite('right');
+    if (isRear(i)) tests[i-1].setImpactSite('rear');
+    if (isCrown(i)) tests[i-1].setImpactSite('crown');
   }
 
   return tests;

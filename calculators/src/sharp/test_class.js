@@ -6,11 +6,11 @@ class Test {
     this.testNumber = attr.testNumber;
     this.anvil = attr.anvil || null;
     this.impactVelocity = attr.impactVelocity || null;
-    this.impactLocation = attr.impactLocation || null;
+    this.impactSite = attr.impactSite || null;
 
     this.peakAcceleration = attr.peakAcceleration || null;
     this.fatalityRisk = attr.fatalityRisk || null;
-    this.impactWeightning = attr.impactWeightning || null;
+    this.impactWeighting = attr.impactWeighting || null;
     this.weightedFatalityRisk = attr.weightedFatalityRisk || null;
   }
 
@@ -24,8 +24,8 @@ class Test {
   getImpactVelocity() {
     return this.impactVelocity;
   }
-  getImpactLocation() {
-    return this.impactLocation;
+  getImpactSite() {
+    return this.impactSite;
   }
   getPeakAcceleration() {
     return this.peakAcceleration;
@@ -33,8 +33,8 @@ class Test {
   getFatalityRisk() {
     return this.fatalityRisk;
   }
-  getImpactWeightening() {
-    return this.impactWeightning;
+  getImpactWeighting() {
+    return this.impactWeighting;
   }
   getWeightedFatalityRisk() {
     return this.weightedFatalityRisk;
@@ -50,8 +50,8 @@ class Test {
   setImpactVelocity( impactVelocity ) {
     this.impactVelocity = impactVelocity;
   }
-  setImpactLocation( impactLocation ) {
-    this.impactLocation = impactLocation;
+  setImpactSite( impactSite ) {
+    this.impactSite = impactSite;
   }
   setPeakAcceleration( peakAcceleration ) {
     this.peakAcceleration = peakAcceleration;
@@ -59,8 +59,8 @@ class Test {
   setFatalityRisk( fatalityRisk ) {
     this.fatalityRisk = fatalityRisk;
   }
-  setImpactWeightening( impactWeightning ) {
-    this.impactWeightning = impactWeightning;
+  setImpactWeighting( impactWeighting ) {
+    this.impactWeighting = impactWeighting;
   }
   setWeightedFatalityRisk( weightedFatalityRisk ) {
     this.weightedFatalityRisk = weightedFatalityRisk;

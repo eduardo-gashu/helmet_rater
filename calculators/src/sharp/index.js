@@ -6,7 +6,7 @@ const createTable = require('./create_table');
 const calculateMu = require('./calculate_mu');
 const calculateAllPeakGs = require('./all_peak_g_calculator');
 const calculateAllFatalityRisks = require('./fatality_risk');
-//const calculateAllWeighting = require('./weighting')
+const calculateAllWeightings = require('./weighting')
 
 
 module.exports = {
@@ -15,6 +15,6 @@ module.exports = {
   calculateMu: calculateMu,
   calculateAllPeakGs: calculateAllPeakGs,
   calculateAllFatalityRisks: calculateAllFatalityRisks,
-  //calculateAllWeighting: calculateAllWeightings,
+  calculateAllWeightings: calculateAllWeightings,
 };
 

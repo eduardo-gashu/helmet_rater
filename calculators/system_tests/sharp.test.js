@@ -7,18 +7,18 @@ test(`Creates a sharp.Test`, function () {
     testNumber: 1,
     anvil: 'flat',
     impactVelocity: 6.0,
-    impactLocation: 'front'
+    impactSite: 'front'
   } );
 
   const testNumber = test.getTestNumber();
   const anvil = test.getAnvil();
   const impactVelocity = test.getImpactVelocity();
-  const impactLocation = test.getImpactLocation();
+  const impactSite = test.getImpactSite();
 
   expect(testNumber).toBe(1);
   expect(anvil).toEqual('flat');
   expect(impactVelocity).toBe(6.0);
-  expect(impactLocation).toEqual('front');
+  expect(impactSite).toEqual('front');
 })
 
 test(`Creates a sharp TestsTable`, function () {
@@ -28,15 +28,15 @@ test(`Creates a sharp TestsTable`, function () {
   expect(result[0].getTestNumber()).toBe(1)
   expect(result[0].getAnvil()).toBe('flat');
   expect(result[0].getImpactVelocity()).toBeCloseTo(config.VNJ);
-  expect(result[0].getImpactLocation()).toBe('front');
+  expect(result[0].getImpactSite()).toBe('front');
   expect(result[22].getTestNumber()).toBe(23)
   expect(result[22].getAnvil()).toBe('kerb');
   expect(result[22].getImpactVelocity()).toBeCloseTo(config.VNO);
-  expect(result[22].getImpactLocation()).toBe('right');
+  expect(result[22].getImpactSite()).toBe('right');
   expect(result[39].getTestNumber()).toBe(40)
   expect(result[39].getAnvil()).toBe('oblique');
   expect(result[39].getImpactVelocity()).toBeCloseTo(config.VOO);
-  expect(result[39].getImpactLocation()).toBe('crown');
+  expect(result[39].getImpactSite()).toBe('crown');
 })
 
 test(`Calculates a mean friction coefficient (mu)`, function () {
@@ -68,7 +68,6 @@ test(`Calculates Risk of fatality for each Test`, function () {
   }
 
   const result = sharp.calculateAllFatalityRisks(fatalityPath, sharpTable);
-  console.log(result);
 
   expect(result.length).toBe(45);
   expect(result[0].fatalityRisk).toBe(0);
@@ -78,5 +77,15 @@ test(`Calculates Risk of fatality for each Test`, function () {
 test(`Calculates Weighting of each test based on its respective site, surface and velocity`, function () {
   const sharpTable = sharp.createTable();
 
-  const result = sharp.calculateAllWeightings
+  const result = sharp.calculateAllWeightings(sharpTable);
+
+  expect(result[0].getImpactWeighting()).toBe(config.SITE_DISTIBUTION.front
+                                       *config.SURFACE_DISTRIBUTION.flat
+                                       *config.VELOCITY_DISTRIBUTION[`${config.VNJ}`]);
+  expect(result[22].getImpactWeighting()).toBe(config.SITE_DISTIBUTION.left
+                                        *config.SURFACE_DISTRIBUTION.kerb
+                                        *config.VELOCITY_DISTRIBUTION[`${config.VNO}`]);
+  expect(result[44].getImpactWeighting()).toBe(config.SITE_DISTIBUTION.crown
+                                        *config.SURFACE_DISTRIBUTION.oblique
+                                        *config.VELOCITY_DISTRIBUTION[`${config.VOM}`]);
 })
