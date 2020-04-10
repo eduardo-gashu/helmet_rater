@@ -5,6 +5,7 @@ const Test = require('./test_class');
 const createTable = require('./create_table');
 const calculateMu = require('./calculate_mu');
 const calculateAllPeakGs = require('./all_peak_g_calculator');
+const calculateAllRiskOfFatality = require('./risk_of_fatality')
 
 
 module.exports = {
@@ -12,5 +13,6 @@ module.exports = {
   createTable: createTable,
   calculateMu: calculateMu,
   calculateAllPeakGs: calculateAllPeakGs,
+  calculateAllRiskOfFatality: calculateAllRiskOfFatality,
 };
 

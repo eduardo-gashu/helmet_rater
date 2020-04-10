@@ -46,14 +46,32 @@ test(`Calculates a mean friction coefficient (mu)`, function () {
   expect(result).toBe(1.5)
 })
 
-test(`Gets All Peak G Results (flat, kerb adn oblieque) from a path and a mu to a Sharp Table`, function () {
+test(`Calculates Peak G of each Test (flat, kerb adn oblieque)`, function () {
   const path = 'system_tests/impact_tests/accelerations_data';
   const mu = 1;
   const sharpTable = sharp.createTable();
+
   const result = sharp.calculateAllPeakGs(path, mu, sharpTable);
 
   expect(result.length).toBe(45);
   expect( Math.abs( 9 - result[0].getPeakAcceleration() ) ).toBeCloseTo(1e-3);
   expect( Math.abs( 9 - result[22].getPeakAcceleration() ) ).toBeCloseTo(1e-3);
   expect( Math.abs( 9*mathjs.sqrt(2) - result[39].getPeakAcceleration() ) ).toBeCloseTo(1e-3);
+})
+
+test(`Calculates Risk of fatality for each Test`, function () {
+  const accelerationsPath = 'system_tests/impact_tests/accelerations_data';
+  const fatalityPath = 'system_tests/fatality_function/sharp.func';
+  let sharpTable = sharp.createTable();
+  for(let i in sharpTable) {
+    sharpTable[i].setPeakAcceleration(10*i);
+  }
+
+
+  const result = sharp.calculateAllRiskOfFatality(fatalityPath, sharpTable);
+  console.log(result);
+
+  expect(result.length).toBe(45);
+  expect(result[0].riskOfFatality).toBe(0);
+  expect(result[15].riskOfFatality).toBe(0);
 })

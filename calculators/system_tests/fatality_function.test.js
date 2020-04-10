@@ -1,7 +1,7 @@
 const readFatalityFunction = require('../src/fatality_function');
 
 test(`Reads .func file and return a XYTable`, function () {
-  const filePath = 'system_tests/fatality_function/test1.func';
+  const filePath = 'system_tests/fatality_function/positiveint.func';
 
   const XYTable = readFatalityFunction(filePath);
   const result = XYTable.getAllPoints();
@@ -25,7 +25,7 @@ test(`Reads .func file and return a XYTable`, function () {
 })
 
 test(`Reads .func file with negative values and return a XYTable`, function () {
-  const filePath = 'system_tests/fatality_function/test2.func';
+  const filePath = 'system_tests/fatality_function/signedint.func';
 
   const XYTable = readFatalityFunction(filePath);
   const result = XYTable.getAllPoints();
@@ -49,7 +49,7 @@ test(`Reads .func file with negative values and return a XYTable`, function () {
 })
 
 test(`Reads .func file with negative values and return a XYTable`, function () {
-  const filePath = 'system_tests/fatality_function/test3.func';
+  const filePath = 'system_tests/fatality_function/decimal.func';
 
   const XYTable = readFatalityFunction(filePath);
   const result = XYTable.getAllPoints();

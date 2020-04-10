@@ -29,16 +29,20 @@ class XYTable {
 
   findXIntervalLimits (x) {
     if( this.isEmpty() ) {
-      return 'error'
+      return null;
     }
 
     const sorted = this.sortByX();
+
     let lower;
     let upper;
     let i = 0;
     do{
       lower = sorted[i];
       upper = sorted[i+1];
+      if( noMorePoints(upper) ){
+        return null;
+      }
       i++;
     } while ( upper.x < x )
 
@@ -62,6 +66,9 @@ function compareX (a, b) {
   else {
     return 0;
   }
+}
+function noMorePoints( point ) {
+  return (typeof point == 'undefined');
 }
 
 module.exports = XYTable;

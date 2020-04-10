@@ -41,7 +41,7 @@ function readDotFuncFile( filePath ) {
     return [convertAllToNumber(xAxis), convertAllToNumber(yAxis)];
 
   } else {
-    return 'not a .func file'; //pensar em tratamento de erro
+    return null; //pensar em tratamento de erro
   }
 }
 
