@@ -9,9 +9,9 @@ class Test {
     this.impactLocation = attr.impactLocation || null;
 
     this.peakAcceleration = attr.peakAcceleration || null;
-    this.riskOfFatality = attr.riskOfFatality || null;
+    this.fatalityRisk = attr.fatalityRisk || null;
     this.impactWeightning = attr.impactWeightning || null;
-    this.weightedRiskOfFatality = attr.weightedRiskOfFatality || null;
+    this.weightedFatalityRisk = attr.weightedFatalityRisk || null;
   }
 
   //getters
@@ -30,14 +30,14 @@ class Test {
   getPeakAcceleration() {
     return this.peakAcceleration;
   }
-  getRiskOfFatality() {
-    return this.riskOfFatality;
+  getFatalityRisk() {
+    return this.fatalityRisk;
   }
   getImpactWeightening() {
     return this.impactWeightning;
   }
-  getWeightedRiskOfFatality() {
-    return this.weightedRiskOfFatality;
+  getWeightedFatalityRisk() {
+    return this.weightedFatalityRisk;
   }
 
   //setters
@@ -56,14 +56,14 @@ class Test {
   setPeakAcceleration( peakAcceleration ) {
     this.peakAcceleration = peakAcceleration;
   }
-  setRiskOfFatality( riskOfFatality ) {
-    this.riskOfFatality = riskOfFatality;
+  setFatalityRisk( fatalityRisk ) {
+    this.fatalityRisk = fatalityRisk;
   }
   setImpactWeightening( impactWeightning ) {
     this.impactWeightning = impactWeightning;
   }
-  setWeightedRiskOfFatality( weightedRiskOfFatality ) {
-    this.weightedRiskOfFatality = weightedRiskOfFatality;
+  setWeightedFatalityRisk( weightedFatalityRisk ) {
+    this.weightedFatalityRisk = weightedFatalityRisk;
   }
 }
 

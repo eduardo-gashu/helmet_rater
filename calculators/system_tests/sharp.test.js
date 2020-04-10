@@ -61,18 +61,22 @@ test(`Calculates Peak G of each Test (flat, kerb adn oblieque)`, function () {
 })
 
 test(`Calculates Risk of fatality for each Test`, function () {
-  const accelerationsPath = 'system_tests/impact_tests/accelerations_data';
   const fatalityPath = 'system_tests/fatality_function/sharp.func';
   let sharpTable = sharp.createTable();
-  for(let i in sharpTable) {
+  for(let i in sharpTable) { //set accelerarions from 0 to 440
     sharpTable[i].setPeakAcceleration(10*i);
   }
 
-
-  const result = sharp.calculateAllRiskOfFatality(fatalityPath, sharpTable);
+  const result = sharp.calculateAllFatalityRisks(fatalityPath, sharpTable);
   console.log(result);
 
   expect(result.length).toBe(45);
-  expect(result[0].riskOfFatality).toBe(0);
-  expect(result[15].riskOfFatality).toBe(0);
+  expect(result[0].fatalityRisk).toBe(0);
+  expect(result[15].fatalityRisk).toBe(0);
+})
+
+test(`Calculates Weighting of each test based on its respective site, surface and velocity`, function () {
+  const sharpTable = sharp.createTable();
+
+  const result = sharp.calculateAllWeightings
 })
