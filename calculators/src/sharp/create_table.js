@@ -22,7 +22,7 @@ module.exports = () => {
     if ( isObliqueO(i) ) tests[i-1].setImpactVelocity(config.VOO);
     if ( isObliqueM(i) ) tests[i-1].setImpactVelocity(config.VOM);
 
-    //set impact locations
+    //set impact sites
     if (isFront(i)) tests[i-1].setImpactSite('front');
     if (isLeft(i)) tests[i-1].setImpactSite('left');
     if (isRight(i)) tests[i-1].setImpactSite('right');

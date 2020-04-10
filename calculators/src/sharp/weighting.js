@@ -7,11 +7,12 @@ const velocity = config.VELOCITY_DISTRIBUTION;
 
 module.exports = function (sharpTable) {
   sharpTable.forEach( test => {
-    test.setImpactWeighting(
-      site[test.getImpactSite()]
-      *surface[test.getAnvil()]
-      *velocity[test.getImpactVelocity()]
-    )
+    let siteProbability = site[test.getImpactSite()];
+    let surfacePrabability = surface[test.getAnvil()];
+    let velocityProbability = velocity[test.getImpactVelocity()];
+    let weighting = siteProbability*surfacePrabability*velocityProbability;
+
+    test.setImpactWeighting(weighting)
   })
   return sharpTable;
 }
