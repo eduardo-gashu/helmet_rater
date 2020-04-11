@@ -6,8 +6,6 @@ test(`Reads .func file and return a XYTable`, function () {
   const XYTable = readFatalityFunction(filePath);
   const result = XYTable.getAllPoints();
 
-  console.log(result);
-
   expect(typeof XYTable).toBe('object');
   expect(result).toEqual(
     [
@@ -30,8 +28,6 @@ test(`Reads .func file with negative values and return a XYTable`, function () {
   const XYTable = readFatalityFunction(filePath);
   const result = XYTable.getAllPoints();
 
-  console.log(result);
-
   expect(typeof XYTable).toBe('object');
   expect(result).toEqual(
     [
@@ -53,8 +49,6 @@ test(`Reads .func file with negative values and return a XYTable`, function () {
 
   const XYTable = readFatalityFunction(filePath);
   const result = XYTable.getAllPoints();
-
-  console.log(result);
 
   expect(typeof XYTable).toBe('object');
   expect(result).toEqual(

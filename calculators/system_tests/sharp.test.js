@@ -50,7 +50,7 @@ test(`Calculates a mean friction coefficient (mu)`, function () {
 test(`Calculates Peak G of each Test (flat, kerb adn oblieque)`, function () {
   const path = 'system_tests/impact_tests/accelerations_data';
   const mu = 1;
-  const sharpTable = sharp.createTable();
+  let sharpTable = sharp.createTable();
 
   const result = sharp.calculateAllPeakGs(path, mu, sharpTable);
 
@@ -63,10 +63,10 @@ test(`Calculates Peak G of each Test (flat, kerb adn oblieque)`, function () {
 test(`Calculates Risk of fatality for each Test`, function () {
   const fatalityPath = 'system_tests/fatality_function/sharp.func';
   let sharpTable = sharp.createTable();
-  for(let i in sharpTable) { //set accelerarions from 0 to 440
+  //set peak  accelerarions from 0 to 440
+  for(let i in sharpTable) {
     sharpTable[i].setPeakAcceleration(10*i);
   }
-
   const result = sharp.calculateAllFatalityRisks(fatalityPath, sharpTable);
 
   expect(result.length).toBe(45);
@@ -75,7 +75,7 @@ test(`Calculates Risk of fatality for each Test`, function () {
 })
 
 test(`Calculates Weighting of each test based on its respective site, surface and velocity`, function () {
-  const sharpTable = sharp.createTable();
+  let sharpTable = sharp.createTable();
 
   const result = sharp.calculateAllWeightings(sharpTable);
 
@@ -88,4 +88,34 @@ test(`Calculates Weighting of each test based on its respective site, surface an
   expect(result[44].getImpactWeighting()).toBe(config.SITE_DISTIBUTION.crown
                                         *config.SURFACE_DISTRIBUTION.oblique
                                         *config.VELOCITY_DISTRIBUTION[`${config.VOM}`]);
+})
+
+test(`Calculates weighted fatality risk for each test`, function () {
+  let sharpTable = sharp.createTable();
+  //set peak acceleration and fatality risk for each test respectively from 0 to 44 and 1 to 45
+  for(let i in sharpTable) {
+    sharpTable[i].setFatalityRisk(Number(i));
+    sharpTable[i].setImpactWeighting(Number(i)+1);
+  }
+  const result = sharp.calculateAllWeightedFatalityRisks(sharpTable);
+
+  expect(result[0].getWeightedFatalityRisk())
+   .toBe(0*1);
+  expect(result[22].getWeightedFatalityRisk())
+   .toBe(22*23);
+  expect(result[44].getWeightedFatalityRisk())
+   .toBe(44*45);
+})
+
+
+test('Calculate total weighted fatality risk of a sharpTable', function () {
+  let sharpTable = sharp.createTable();
+  //set weighted fatality risk for each test from 0 to 44
+  for(let i in sharpTable) {
+    sharpTable[i].setWeightedFatalityRisk(Number(i));
+  }
+  const result = sharp.calculateTotalWeightedFatalityRisk(sharpTable);
+
+  const EXPECTED_SUM = (0+44)*45/2;
+  expect(result).toBe(EXPECTED_SUM);
 })
