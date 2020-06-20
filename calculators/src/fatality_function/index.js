@@ -1,7 +1,7 @@
 const utility = require('../utility');
 const fs = require('fs');
 
-const FATALITY_FUNCTION_PATH = 'src/fatality_function/fatality.func';
+const FATALITY_FUNCTION_PATH = 'data/fatality_function/fatality.func';
 const ENCODE = 'utf8';
 const VALUE_SEPARATOR = ',';
 const AXIS_SEPARATOR = "\n";

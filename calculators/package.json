@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/sharp/app/main.js",
     "sharp": "node src/calculate_sharp.js",
     "gsrater": "node src/calculate_gsrater.js",
     "test": "jest"
@@ -12,6 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "csv-parse": "^4.9.0",
+    "csv-stringify": "^5.3.6",
     "fs": "0.0.1-security",
     "mathjs": "^6.6.1"
   },

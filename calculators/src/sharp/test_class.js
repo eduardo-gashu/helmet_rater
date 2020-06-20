@@ -1,7 +1,7 @@
 class Test {
   constructor ( attr ) {
     if( attr.testNumber == undefined ) {
-      return console.error('Test Error: no numberTest');
+      throw('Test Error: no numberTest');
     }
     this.testNumber = attr.testNumber;
     this.anvil = attr.anvil || null;
