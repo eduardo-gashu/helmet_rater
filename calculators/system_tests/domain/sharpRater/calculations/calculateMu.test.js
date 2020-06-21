@@ -1,4 +1,4 @@
-const {calculateMu} = require("../../../../src/sharp/domain/rater");
+const {calculateMu} = require("../../../../src/sharp/domain/sharpRater");
 
 test (`It should calculate mean Mu, given preObliqueTests`, function (){
   const leftObliqueTest = {

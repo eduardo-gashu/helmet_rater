@@ -3,8 +3,8 @@ module.exports = calculateEquivalentGs;
 function calculateEquivalentGs(flatAnvilLinearTests, mu) {
   equivalentGs = [];
   flatAnvilLinearTests.forEach(flatAnvilLinearTest => {
-    const equivalentG = calculateEquivalentG(flatAnvilLinearTest, mu);
-    equivalentGs.push(equivalentG)
+    let equivalentG = calculateEquivalentG(flatAnvilLinearTest, mu);
+    equivalentGs.push(equivalentG);
   });
 
   return equivalentGs;

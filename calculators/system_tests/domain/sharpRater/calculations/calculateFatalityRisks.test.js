@@ -1,6 +1,6 @@
-const {createSharpTests, calculateFatalityRisks} = require("../../../../src/sharp/domain/rater");
+const {createSharpTests, calculateFatalityRisks} = require("../../../../src/sharp/domain/sharpRater");
 
-test(`Calculates Risk of fatality for each Test`, function () {
+test(`It should calculate Risk of fatality for each Test`, function () {
   const fatalityFunction = 'sharp';
   let sharpTests = [];
   sharpTests = createSharpTests(sharpTests);

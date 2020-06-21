@@ -1,4 +1,4 @@
-const {calculateEquivalentGs} = require("../../../../src/sharp/domain/rater");
+const {calculateEquivalentGs} = require("../../../../src/sharp/domain/sharpRater");
 
 test (`It should calculate equivalent peak accelerations`, function (){
   const accel1 = 10;
