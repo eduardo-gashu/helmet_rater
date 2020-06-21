@@ -1,5 +1,4 @@
 const {
-  readRawTests,
   calculateResultantGs,
   calculateAbsoluteMaximun,
   calculateTimeToValue,
@@ -7,9 +6,10 @@ const {
   calculateHIC,
   createPreLinearTests,
   createPreObliqueTests,
-  writePreLinearTests,
-  writePreObliqueTests
 } = require('../../domain/preprocessor');
+const readRawTests = require("../../infra/readRawTests");
+const writePreLinearTests = require("../../infra/writePreLinearTests");
+const writePreObliqueTests = require("../../infra/writePreObliqueTests");
 
 const LAST_LINEAR_TEST_NUMBER = 30;
 const LAST_OBLIQUE_TEST_NUMBER = 32;

@@ -1,9 +1,9 @@
-const preprocess = require("../../../src/sharp/app/useCases/preprocess");
+const sharpRate = require("../../../src/sharp/app/useCases/sharpRate");
 
 test(`It preprocess an 'exemple' helmet`, function(){
   const helmetName = "example";
 
-  const result = preprocess(helmetName);
+  const result = sharpRate(helmetName);
 
   expect(result).toBe(true);
 })

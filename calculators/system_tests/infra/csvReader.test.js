@@ -1,4 +1,4 @@
-const csvReader = require("../../src/sharp/infra/csvReader");
+const csvReader = require("../../src/sharp/infra/csv/csvReader");
 const fs = require("fs");
 
 test(`it reads the test.csv file`, function () {

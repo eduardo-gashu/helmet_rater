@@ -1,4 +1,4 @@
-const csvWriter = require("../../src/sharp/infra/csvWriter");
+const csvWriter = require("../../src/sharp/infra/csv/csvWriter");
 const fs = require("fs")
 
 test(`it reads the test.csv file`, function () {

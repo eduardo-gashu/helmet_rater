@@ -1,7 +1,7 @@
 class PreLinearTest{
   constructor(atributes){
-    if(!atributes.id) throw new Error(`PreLinearTest class error: id is necessary in constructor`);
-
+    if(!atributes.id)
+      throw new Error(`PreLinearTest class error: id is necessary in constructor`);
     this.id = atributes.id;
     this.anvil = atributes.anvil || null;
     this.velocity = atributes.velocity || null;

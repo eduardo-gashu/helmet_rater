@@ -1,7 +1,7 @@
 class PreObliqueTest{
   constructor(atributes){
-    if(!atributes.id) throw new Error(`PreObliqueTest class error: id is necessary in constructor`);
-
+    if(!atributes.id)
+      throw new Error(`PreObliqueTest class error: id is necessary in constructor`);
     this.id = atributes.id;
     this.velocity = atributes.velocity || null;
     this.site = atributes.site || null;
