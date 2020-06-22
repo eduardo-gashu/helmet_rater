@@ -29,7 +29,7 @@
 
 * Move to the rating_calculator directory:
 
-  $ cd rating_Calculator
+  $ cd rating_calculator
 
 * Install Dependencies:
 
