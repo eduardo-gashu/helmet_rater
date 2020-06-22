@@ -1,4 +1,4 @@
-const csvReader = require("./csv/csvReader");
+const csvReader = require("../csv/csvReader");
 
 module.exports = readPreLinearTests;
 

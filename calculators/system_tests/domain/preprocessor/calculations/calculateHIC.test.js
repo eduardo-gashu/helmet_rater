@@ -1,4 +1,4 @@
-const {calculateHIC} = require("../../../../src/sharp/domain/preprocessor");
+const {calculateHIC} = require("../../../../src/domain/preprocessor");
 
 test(`for all acceleration recods = 1, it should return hic = 0.036`,
 function (){

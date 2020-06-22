@@ -5,6 +5,8 @@ const calculateFatalityRisks = require("./calculations/calculateFatalityRisks");
 const calculateWeightings = require("./calculations/calculateWeightings");
 const calculateWeightedFatalityRisks = require("./calculations/calculateWeightedFatalityRisks");
 const calculateTotalWeightedFatalityRisk = require("./calculations/calculateTotalWeightedFatalityRisk");
+const predictNumberOfFatalities = require("./calculations/predictNumberOfFatalities");
+const calculateSafetyRating = require("./calculations/calculateSafetyRating");
 
 module.exports = {
   createSharpTests,
@@ -14,4 +16,6 @@ module.exports = {
   calculateWeightings,
   calculateWeightedFatalityRisks,
   calculateTotalWeightedFatalityRisk,
+  predictNumberOfFatalities,
+  calculateSafetyRating,
 }

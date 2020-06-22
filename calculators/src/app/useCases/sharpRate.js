@@ -1,8 +1,19 @@
-const { createSharpTests, calculateEquivalentGs, calculateFatalityRisks, calculateWeightings, calculateWeightedFatalityRisks, calculateTotalWeightedFatalityRisk } = require("../../domain/sharpRater");
-const readPreObliqueTests = require("../../infra/readPreObliqueTests");
-const readPreLinearTests = require("../../infra/readPreLinearTests");
-const writeSharpTests = require("../../infra/writeSharpTests")
+const {
+  createSharpTests,
+  calculateEquivalentGs,
+  calculateFatalityRisks,
+  calculateWeightings,
+  calculateWeightedFatalityRisks,
+  calculateTotalWeightedFatalityRisk,
+  predictNumberOfFatalities,
+  calculateSafetyRating } = require("../../domain/sharpRater");
+const readPreObliqueTests = require("../../infra/pre/readPreObliqueTests");
+const readPreLinearTests = require("../../infra/pre/readPreLinearTests");
+const writeSharpTests = require("../../infra/rtd/sharp/writeSharpTests")
+const writeSharpResults = require("../../infra/rtd/sharp/writeSharpResults")
 const calculateMu = require("../../domain/sharpRater/calculations/calculateMu");
+const { POPULATION } = require("../../domain/config");
+const SharpResults = require("../../domain/entity/SharpResults");
 
 const FIRST_LINEAR_TEST_IDX = 0;
 const LAST_LINEAR_TEST_IDX = 29;
@@ -39,7 +50,6 @@ function sharpRate(helmetName){
   console.log(`/*** Calculating Equivalent Oblique Peak Accelerations`);
   const flatAnvilLinearTests = preLinearTests.slice(FIRST_FLAT_ANVIL_LINEAR_TEST_IDX,
                                                     NUMBER_OF_FLAT_ANVIL_LINEAR_TESTS);
-
   const equivalentGs = calculateEquivalentGs(flatAnvilLinearTests, mu);
 
   console.log(`/*** Writing Equivalent Oblique Peak Accelerations in Sharp Tests Table`);
@@ -59,10 +69,28 @@ function sharpRate(helmetName){
   console.log(`/*** Writing Sharp Tests on sharp_tests.csv file`);
   writeSharpTests(helmetName, sharpTests);
 
-  //
   console.log(`/*** Calculating Total Risk of Fatality`);
   const totalRiskOfFatality = calculateTotalWeightedFatalityRisk(sharpTests);
   console.log(`Total Risk of Fatality = ${totalRiskOfFatality}`);
 
+  console.log(`/*** Predicting Number of Fatalities for a Population of ${POPULATION}`);
+  const numberOfFatalities = predictNumberOfFatalities(totalRiskOfFatality, POPULATION);
+  console.log(`Number of Fatalities = ${numberOfFatalities}`);
 
+  console.log(`/*** Calculating Sharp's Safety Rating`);
+  const safetyRating = calculateSafetyRating(numberOfFatalities, sharpTests);
+  console.log(`Safety Rating = ${safetyRating}`);
+
+  console.log(`/*** Writing Results on rtd/sharp_results.csv File`);
+  const sharpResults = new SharpResults({
+    helmet_name: helmetName,
+    total_fatality_risk: totalRiskOfFatality,
+    predicted_number_of_fatalities: numberOfFatalities,
+    safety_rating: safetyRating
+  });
+  const dataToBeWritten = [sharpResults];
+  writeSharpResults(helmetName, dataToBeWritten);
+
+  console.log(`|*** Sharp Rating Calculation Successfully Finished ***|`);
+  return true;
 }

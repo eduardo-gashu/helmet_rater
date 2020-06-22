@@ -1,4 +1,4 @@
-const {calculateTotalWeightedFatalityRisk, createSharpTests} = require("../../../../src/sharp/domain/sharpRater");
+const {calculateTotalWeightedFatalityRisk, createSharpTests} = require("../../../../src/domain/sharpRater");
 
 test(`It shoul calculate Total Risf of Fatality`, function () {
   let sharpTests = createSharpTests([]);

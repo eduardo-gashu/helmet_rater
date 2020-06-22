@@ -1,4 +1,4 @@
-const readRawTests = require("../../src/sharp/infra/readRawTests");
+const readRawTests = require("../../src/infra/raw/readRawTests");
 
 test(`it reads "example" raw data`, function () {
   const helmetName = "testHelmet";

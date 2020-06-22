@@ -1,4 +1,4 @@
-const csvReader = require("./csv/csvReader")
+const csvReader = require("../csv/csvReader")
 const fs = require("fs")
 
 const NUMBER_OF_TESTS = 32;

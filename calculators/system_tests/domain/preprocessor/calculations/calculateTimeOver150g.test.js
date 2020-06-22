@@ -1,4 +1,4 @@
-const {calculateTimeOver150g} = require("../../../../src/sharp/domain/preprocessor");
+const {calculateTimeOver150g} = require("../../../../src/domain/preprocessor");
 
 test (`It should calculate the time where R>150g, returning 3*0.0625`, function () {
   const records = [

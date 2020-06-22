@@ -1,4 +1,4 @@
-const {calculateAbsoluteMaximun} = require("../../../../src/sharp/domain/preprocessor");
+const {calculateAbsoluteMaximun} = require("../../../../src/domain/preprocessor");
 
 test(`It receive an array of numeric records
       and should return the absolute maximun

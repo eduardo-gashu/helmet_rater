@@ -1,4 +1,4 @@
-const preprocess = require("../../../src/sharp/app/useCases/preprocess");
+const preprocess = require("../../../src/app/useCases/preprocess");
 
 test(`It preprocess an 'exemple' helmet`, function(){
   const helmetName = "example";

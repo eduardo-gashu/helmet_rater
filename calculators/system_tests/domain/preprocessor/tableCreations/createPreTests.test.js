@@ -1,4 +1,4 @@
-const {createPreLinearTests} = require("../../../../src/sharp/domain/preprocessor");
+const {createPreLinearTests} = require("../../../../src/domain/preprocessor");
 
 test (`it Should construct a array of PreLinearTest with properties`, function () {
   let preLinearTest = [];

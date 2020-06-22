@@ -7,9 +7,9 @@ const {
   createPreLinearTests,
   createPreObliqueTests,
 } = require('../../domain/preprocessor');
-const readRawTests = require("../../infra/readRawTests");
-const writePreLinearTests = require("../../infra/writePreLinearTests");
-const writePreObliqueTests = require("../../infra/writePreObliqueTests");
+const readRawTests = require("../../infra/raw/readRawTests");
+const writePreLinearTests = require("../../infra/pre/writePreLinearTests");
+const writePreObliqueTests = require("../../infra/pre/writePreObliqueTests");
 
 const LAST_LINEAR_TEST_NUMBER = 30;
 const LAST_OBLIQUE_TEST_NUMBER = 32;

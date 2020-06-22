@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/sharp/app/main.js",
+    "start": "node src/app/main.js",
     "sharp": "node src/calculate_sharp.js",
     "gsrater": "node src/calculate_gsrater.js",
     "test": "jest"

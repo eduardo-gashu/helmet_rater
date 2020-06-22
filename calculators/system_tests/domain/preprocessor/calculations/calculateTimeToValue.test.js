@@ -1,4 +1,4 @@
-const {calculateTimeToValue} = require("../../../../src/sharp/domain/preprocessor");
+const {calculateTimeToValue} = require("../../../../src/domain/preprocessor");
 
 test (`It should calculate the time to reach the first occurance of the value`, function () {
   const records = [

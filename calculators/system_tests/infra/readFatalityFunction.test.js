@@ -1,4 +1,4 @@
-const readFatalityFunction = require('../../src/sharp/infra/readFatalityFunction');
+const readFatalityFunction = require('../../src/infra/readFatalityFunction');
 
 test(`Reads .func file and return a XYTable`, function () {
   const fileName = 'test_functions/positiveint';

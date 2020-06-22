@@ -1,4 +1,4 @@
-const csvWriter = require("./csv/csvWriter")
+const csvWriter = require("../csv/csvWriter")
 const fs = require("fs")
 
 module.exports = writePreObliqueTests;

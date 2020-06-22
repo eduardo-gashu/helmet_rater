@@ -1,5 +1,5 @@
-const writePreObliqueTests = require("../../src/sharp/infra/writePreObliqueTests");
-const csvReader = require("../../src/sharp/infra/csv/csvReader")
+const writePreObliqueTests = require("../../src/infra/pre/writePreObliqueTests");
+const csvReader = require("../../src/infra/csv/csvReader")
 
 test(`it should write "testHelmet" data
       to ./data/testHelmet/pre/oblique_tests.csv file`, function () {

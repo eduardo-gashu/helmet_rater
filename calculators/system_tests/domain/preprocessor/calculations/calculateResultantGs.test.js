@@ -1,4 +1,4 @@
-const {calculateResultantGs} = require("../../../../src/sharp/domain/preprocessor");
+const {calculateResultantGs} = require("../../../../src/domain/preprocessor");
 const { sqrt } = require("mathjs");
 
 test(`Given records of Gs, it should return each absolute G`, function () {

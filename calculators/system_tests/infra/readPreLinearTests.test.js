@@ -1,4 +1,4 @@
-const readPreLinearTests = require("../../src/sharp/infra/readPreLinearTests");
+const readPreLinearTests = require("../../src/infra/pre/readPreLinearTests");
 
 test(`it should read data from ./data/testHelmet/pre/oblique_tests.csv`, function () {
   const helmetName = "testHelmet";

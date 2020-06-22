@@ -1,4 +1,4 @@
-const sharpRate = require("../../../src/sharp/app/useCases/sharpRate");
+const sharpRate = require("../../../src/app/useCases/sharpRate");
 
 test(`It preprocess an 'exemple' helmet`, function(){
   const helmetName = "example";
