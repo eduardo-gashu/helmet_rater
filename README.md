@@ -41,7 +41,7 @@
 
 * Or executing specific test:
 
-  $ npx jest system_tests/{.test.js file}
+  $ npx jest system_tests/{.test.js file or directory that contains .test.js files}
 
 * Running application:
 
