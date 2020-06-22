@@ -24,19 +24,25 @@
 
 ### Usage
 * Clone the project:
-$ git clone git@github.com:eduardo-gashu/helmet_rater.git
+
+  $ git clone git@github.com:eduardo-gashu/helmet_rater.git
 
 * Move to the rating_calculator directory:
-$ cd rating_Calculator
+
+  $ cd rating_Calculator
 
 * Install Dependencies:
-$ npm install
+
+  $ npm install
 
 * Executing all tests:
-$ npm run test
+
+  $ npm run test
 
 * Or executing specific test:
-$ npx jest system_tests/{.test.js file}
+
+  $ npx jest system_tests/{.test.js file}
 
 * Running application:
-$ npm run app
+
+  $ npm run app
