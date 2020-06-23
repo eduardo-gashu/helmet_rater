@@ -15,6 +15,7 @@
     "csv-stringify": "^5.3.6",
     "fs": "0.0.1-security",
     "mathjs": "^6.6.1",
+    "performance-now": "^2.1.0",
     "prompt": "^1.0.0"
   },
   "devDependencies": {
