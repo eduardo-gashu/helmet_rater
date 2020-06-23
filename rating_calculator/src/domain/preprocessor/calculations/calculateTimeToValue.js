@@ -1,4 +1,4 @@
-const PERIOD = 0.0625; //milliseconds
+const { SAMPLING_PERIOD } = require("../preConfig");
 
 module.exports = calculateTimeToValue;
 
@@ -12,7 +12,7 @@ function calculateTimeToValue (records, maximunValues) {
   let time = null;
   for(let i in records) {
     if(foundValue( Number(records[i][key]), Number(maximunValues[`abs_max_${key}`]) )) {
-      time = i*PERIOD;
+      time = i*SAMPLING_PERIOD;
       break;
     }
   }

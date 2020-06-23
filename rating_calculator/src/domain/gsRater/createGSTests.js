@@ -1,10 +1,8 @@
-const config = require('../config')
+const config = require('./gsConfig')
 const GSTest = require('../entity/GSTest')
 
 module.exports = function createGSTests(gsTests) {
-  const NUMBER_OF_TESTS = 45;
-
-  for (let i = 1; i <= NUMBER_OF_TESTS; i++) {
+  for (let i = 1; i <= config.TOTAL_NUMBER_OF_TESTS; i++) {
     gsTests.push(new GSTest({ test_number: i }));
 
     //set anvil type

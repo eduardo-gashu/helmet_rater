@@ -31,6 +31,8 @@ VELOCITY_DISTRIBUTION[`${VOO}`] = 0.0496;
 VELOCITY_DISTRIBUTION[`${VOM}`] = 0.0496;
 
 module.exports = {
+  NUMBER_OF_LINEAR_TESTS: 30,
+  NUMBER_OF_OBLIQUE_TESTS: 2,
   ANGLE: OBLIQUE_IMPACT_ANGLE,
   //Nominal velocity for each head size
   VNJ: VNJ,

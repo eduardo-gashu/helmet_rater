@@ -1,9 +1,9 @@
-module.exports = calculateHIC;
+const { HIC_DELTA_T, SAMPLING_PERIOD } = require("../preConfig");
 
-const DELTA_T = 36; //milliseconds
-const PERIOD = 0.0625; //milliseconds
-const NUMBER_OF_PERIODS = DELTA_T/PERIOD;
+const NUMBER_OF_PERIODS = HIC_DELTA_T/SAMPLING_PERIOD;
 const NUMBER_OF_SAMPLES = NUMBER_OF_PERIODS+1;
+
+module.exports = calculateHIC;
 
 function calculateHIC (records) {
   let hicMax = 0;
@@ -27,7 +27,7 @@ function lengthOf (obj) {
 
 function localHic (records) {
   let mean = meanValue(records);
-  let result = ( Math.pow(mean,2.5) )*(DELTA_T/1000);
+  let result = ( Math.pow(mean,2.5) )*(HIC_DELTA_T/1000);
   return result;
 }
 function meanValue (records) {

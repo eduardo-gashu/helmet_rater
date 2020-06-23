@@ -12,7 +12,7 @@ const readPreLinearTests = require("../../infra/pre/readPreLinearTests");
 const writeSharpTests = require("../../infra/rtd/sharp/writeSharpTests")
 const writeSharpResults = require("../../infra/rtd/sharp/writeSharpResults")
 const calculateMu = require("../../domain/sharpRater/calculations/calculateMu");
-const { POPULATION } = require("../../domain/config");
+const { POPULATION } = require("../../domain/sharpRater/sharpConfig");
 const SharpResults = require("../../domain/entity/SharpResults");
 
 const FIRST_LINEAR_TEST_IDX = 0;
@@ -73,7 +73,7 @@ function sharpRate(helmetName){
   const totalRiskOfFatality = calculateTotalWeightedFatalityRisk(sharpTests);
 
   console.log(`Predicting Number of Fatalities for a Population of ${POPULATION}`);
-  const numberOfFatalities = predictNumberOfFatalities(totalRiskOfFatality, POPULATION);
+  const numberOfFatalities = predictNumberOfFatalities(totalRiskOfFatality);
 
   console.log(`Calculating Sharp's Safety Rating`);
   const safetyRating = calculateSafetyRating(numberOfFatalities, sharpTests);

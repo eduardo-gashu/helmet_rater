@@ -33,6 +33,9 @@ VELOCITY_DISTRIBUTION[`${VOM}`] = 0.0496;
 const POPULATION = 7078
 
 module.exports = {
+  NUMBER_OF_EQ_OBLIQUE_TESTS:15,
+  NUMBER_OF_LINEAR_TESTS:30,
+  TOTAL_NUMBER_OF_TESTS:45,
   ANGLE: OBLIQUE_IMPACT_ANGLE,
   //Nominal velocity for each head size
   VNJ: VNJ,

@@ -1,5 +1,6 @@
 module.exports = predictNumberOfFatalities;
+const {POPULATION} = require("../gsConfig")
 
-function predictNumberOfFatalities(fatalityRisk, population) {
-  return fatalityRisk*population;
+function predictNumberOfFatalities(fatalityRisk) {
+  return fatalityRisk*POPULATION;
 }

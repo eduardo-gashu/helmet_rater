@@ -1,4 +1,5 @@
 const {calculateTimeOver150g} = require("../../../../src/domain/preprocessor");
+const {SAMPLING_PERIOD} = require("../../../../src/domain/preprocessor/preConfig");
 
 test (`It should calculate the time where R>150g, returning 3*0.0625`, function () {
   const records = [
@@ -12,7 +13,7 @@ test (`It should calculate the time where R>150g, returning 3*0.0625`, function 
 
   const result = calculateTimeOver150g(records);
 
-  const expectedTime = 3*0.0625;
+  const expectedTime = 3*SAMPLING_PERIOD;
   expect(result.time_over_threshold).toBe(expectedTime);
 });
 

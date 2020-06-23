@@ -73,7 +73,7 @@ function sharpRate(helmetName){
   const totalRiskOfFatality = calculateTotalWeightedFatalityRisk(gsTests);
 
   console.log(`Predicting Number of Fatalities for a Population of ${POPULATION}`);
-  const numberOfFatalities = predictNumberOfFatalities(totalRiskOfFatality, POPULATION);
+  const numberOfFatalities = predictNumberOfFatalities(totalRiskOfFatality);
 
   console.log(`Calculating G&S's Safety Rating`);
   const safetyRating = calculateSafetyRating(numberOfFatalities, gsTests);

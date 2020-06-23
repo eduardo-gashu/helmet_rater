@@ -1,4 +1,5 @@
 const {calculateTimeToValue} = require("../../../../src/domain/preprocessor");
+const {SAMPLING_PERIOD} = require("../../../../src/domain/preprocessor/preConfig");
 
 test (`It should calculate the time to reach the first occurance of the value`, function () {
   const records = [
@@ -13,7 +14,7 @@ test (`It should calculate the time to reach the first occurance of the value`, 
 
   const result = calculateTimeToValue(records, value);
 
-  const expectedTime = 3*0.0625;
+  const expectedTime = 3*SAMPLING_PERIOD;
   expect(result.time_to_value).toBe(expectedTime);
 });
 

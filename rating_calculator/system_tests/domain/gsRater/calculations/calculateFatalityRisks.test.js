@@ -1,4 +1,5 @@
 const {createGSTests, calculateFatalityRisks} = require("../../../../src/domain/gsRater");
+const { TOTAL_NUMBER_OF_TESTS } = require("../../../../src/domain/gsRater/gsConfig");
 
 test(`It should calculate Risk of fatality for each Test`, function () {
   const fatalityFunction = 'gs';
@@ -10,7 +11,7 @@ test(`It should calculate Risk of fatality for each Test`, function () {
   }
   const result = calculateFatalityRisks(fatalityFunction, gsTests);
 
-  expect(result.length).toBe(45);
+  expect(result.length).toBe(TOTAL_NUMBER_OF_TESTS);
   expect(result[0].fatality_risk).toBe(0);
   expect(result[25].fatality_risk).toBe(0.05);
 })

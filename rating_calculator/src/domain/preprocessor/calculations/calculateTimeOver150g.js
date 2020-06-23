@@ -1,8 +1,8 @@
-module.exports = calculateTimeOver150g;
-
+const { SAMPLING_PERIOD } = require("../preConfig");
 
 const THRESHOLD = 150; //g
-const PERIOD = 0.0625; //miliseconds
+
+module.exports = calculateTimeOver150g;
 
 function calculateTimeOver150g(records) {
   let keys = [];
@@ -17,6 +17,6 @@ function calculateTimeOver150g(records) {
       recordsOverThreshold++;
     }
   }
-  const timeOverThreshold = recordsOverThreshold*PERIOD;
+  const timeOverThreshold = recordsOverThreshold*SAMPLING_PERIOD;
   return {time_over_threshold: timeOverThreshold}
 }

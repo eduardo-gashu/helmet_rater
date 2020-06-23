@@ -1,10 +1,9 @@
 const PreObliqueTest = require('../../entity/PreObliqueTest');
-const config = require("../../config");
+const config = require("../../../config");
 
 module.exports = createPreObliqueTests;
 
 function createPreObliqueTests(preObliqueTests) {
-  const NUMBER_OF_TESTS = 2;
   const oblique31 = {
     id: 31,
     velocity: 8.5,

@@ -1,12 +1,11 @@
 const PreLinearTest = require('../../entity/PreLinearTest');
-const config = require("../../config");
+const config = require("../../../config");
 
 module.exports = createPreLinearTests;
 
 function createPreLinearTests(preLinearTests) {
-  const NUMBER_OF_TESTS = 30;
 
-  for (let i = 1; i <= NUMBER_OF_TESTS; i++) {
+  for (let i = 1; i <= config.NUMBER_OF_LINEAR_TESTS; i++) {
     preLinearTests.push(new PreLinearTest({ id: i }));
 
     //set anvil type

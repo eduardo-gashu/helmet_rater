@@ -2,9 +2,7 @@ const config = require('./sharpConfig')
 const SharpTest = require('../entity/SharpTest')
 
 module.exports = function createSharpTests(sharpTests) {
-  const NUMBER_OF_TESTS = 45;
-
-  for (let i = 1; i <= NUMBER_OF_TESTS; i++) {
+  for (let i = 1; i <= config.TOTAL_NUMBER_OF_TESTS; i++) {
     sharpTests.push(new SharpTest({ test_number: i }));
 
     //set anvil type

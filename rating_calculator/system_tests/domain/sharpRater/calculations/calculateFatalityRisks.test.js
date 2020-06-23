@@ -1,4 +1,5 @@
 const {createSharpTests, calculateFatalityRisks} = require("../../../../src/domain/sharpRater");
+const { TOTAL_NUMBER_OF_TESTS } = require("../../../../src/domain/sharpRater/sharpConfig");
 
 test(`It should calculate Risk of fatality for each Test`, function () {
   const fatalityFunction = 'sharp';
@@ -10,7 +11,7 @@ test(`It should calculate Risk of fatality for each Test`, function () {
   }
   const result = calculateFatalityRisks(fatalityFunction, sharpTests);
 
-  expect(result.length).toBe(45);
+  expect(result.length).toBe(TOTAL_NUMBER_OF_TESTS);
   expect(result[0].fatality_risk).toBe(0);
   expect(result[15].fatality_risk).toBe(0);
 })

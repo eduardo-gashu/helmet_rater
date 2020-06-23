@@ -1,19 +1,21 @@
+const config = require('../sharpConfig');
+
 module.exports = calculateSafetyRating;
 
 function calculateSafetyRating(numberOfFatalities, sharpTests){
   if(numberOfFatalities<0) throw Error(`calculateSafetyRating error: invalid numberOfFatalities`)
 
-  if(numberOfFatalities<155){
+  if(numberOfFatalities<config.LIMIT_5_STARS){
     if(shouldReduceStars(sharpTests)) return 4;
     else return 5;
   }
-  if(numberOfFatalities<230){
+  if(numberOfFatalities<config.LIMIT_4_STARS){
     return 4;
   }
-  if(numberOfFatalities<305){
+  if(numberOfFatalities<config.LIMIT_3_STARS){
     return 3;
   }
-  if(numberOfFatalities<380){
+  if(numberOfFatalities<config.LIMIT_2_STARS){
     return 2;
   }
   return 1;

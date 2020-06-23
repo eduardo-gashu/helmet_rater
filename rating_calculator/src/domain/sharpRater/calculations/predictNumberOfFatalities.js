@@ -1,5 +1,7 @@
+const {POPULATION} = require("../sharpConfig")
+
 module.exports = predictNumberOfFatalities;
 
-function predictNumberOfFatalities(fatalityRisk, population) {
-  return fatalityRisk*population;
+function predictNumberOfFatalities(fatalityRisk) {
+  return fatalityRisk*POPULATION;
 }
