@@ -1,4 +1,4 @@
-const config = require('../../config');
+const config = require('../sharpConfig');
 
 const site = config.SITE_DISTIBUTION;
 const surface = config.SURFACE_DISTRIBUTION;

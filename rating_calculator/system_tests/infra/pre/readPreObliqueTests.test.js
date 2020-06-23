@@ -1,4 +1,4 @@
-const readPreObliqueTests = require("../../src/infra/pre/readPreObliqueTests");
+const readPreObliqueTests = require("../../../src/infra/pre/readPreObliqueTests");
 
 test(`it should read data from ./data/testHelmet/pre/oblique_tests.csv`, function () {
   const helmetName = "testHelmet";

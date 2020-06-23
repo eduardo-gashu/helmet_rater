@@ -1,4 +1,4 @@
-const config = require('../config')
+const config = require('./sharpConfig')
 const SharpTest = require('../entity/SharpTest')
 
 module.exports = function createSharpTests(sharpTests) {

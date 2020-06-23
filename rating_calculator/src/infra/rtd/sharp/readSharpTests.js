@@ -1,8 +1,8 @@
 const csvReader = require("../../csv/csvReader");
 
-module.exports = readPreLinearTests;
+module.exports = readSharpTests;
 
-function readPreLinearTests (helmetName) {
+function readSharpTests (helmetName) {
   const helmetPath = `./data/${helmetName}/rtd/sharp_tests.csv`;
   return csvReader.getRecords(helmetPath);
 }

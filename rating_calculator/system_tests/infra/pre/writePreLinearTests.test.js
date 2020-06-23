@@ -1,5 +1,5 @@
-const writePreLinearTests = require("../../src/infra/pre/writePreLinearTests");
-const csvReader = require("../../src/infra/csv/csvReader")
+const writePreLinearTests = require("../../../src/infra/pre/writePreLinearTests");
+const csvReader = require("../../../src/infra/csv/csvReader")
 
 test(`it should write "testHelmet" data
 to ./data/testHelmet/pre/oblique_tests.csv file`, function () {
